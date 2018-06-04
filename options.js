@@ -68,6 +68,23 @@ function Options() {
         return ret
     }
     
+    // Include specific functions for each return type
+    this.getString= (keyName,defaultVal="") => {
+        return this.getOpt(keyName,"string",defaultVal)
+    }
+    this.getInt= (keyName,defaultVal="") => {
+        return this.getOpt(keyName,"int",defaultVal)
+    }
+    this.getNumber= (keyName,defaultVal="") => {
+        return this.getOpt(keyName,"number",defaultVal)
+    }
+    this.getFlag= (keyName,defaultVal="") => {
+        return this.getOpt(keyName,"flag",defaultVal)
+    }
+    this.getBoolean= (keyName,defaultVal="") => {
+        return this.getOpt(keyName,"boolena",defaultVal)
+    }
+    
     // setFromEnv(envArray) - use envArray for the key names to pull in environment variables 
     this.setFromEnv = (envArray) => {
         let ret = {}
